@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from "react"
 import './App.css';
 import Axios from "axios";
+import PredictAge from "./PredictAge";
 
 // fetch("https://catfact.ninja/fact")
 //   .then((response) => response.json())
@@ -23,6 +24,9 @@ const fetchCatFact = () => {
       onClick={fetchCatFact}>
         Generate Cat Fact</button>
       <p>{leftClick}</p>
+      <div>
+        <PredictAge />
+      </div>
     </div>
   );
 }
