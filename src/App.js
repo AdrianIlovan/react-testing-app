@@ -3,11 +3,7 @@ import './App.css';
 import Axios from "axios";
 import PredictAge from "./PredictAge";
 
-// fetch("https://catfact.ninja/fact")
-//   .then((response) => response.json())
-//   .then((data) => {console.log(data)});
 function App() {
-
 const [leftClick, setLeftClick] = useState([])
 
 const fetchCatFact = () => { 

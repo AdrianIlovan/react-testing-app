@@ -1,11 +1,26 @@
 import React , { useState,useEffect } from "react"
-//import React from "react"
+import Axios from "axios"
 
 const PredictAge = () => {
- 
-    return(
+const [name, setName] = useState("");   
+const [predictedAge, setPredictedAge] = useState(0);
+
+const fetchData = () => {
+    Axios.get(`https://api.agify.io/?name=${name}`)
+    .then((res) => {
+        setPredictedAge(res.data.age);
+    });
+};
+    return (
         <div>
-            <button>Predict Age Of Any Name</button>
+            <input 
+            onChange={(event) => {setName(event.target.value);}}
+            placeholder="Ex: Adrian.."/>
+            <button
+            onClick={fetchData}>Predict Age Of Any Name</button>
+        <div>
+            <h1>Predicted Age: {predictedAge}</h1>
+        </div>
         </div>
     )
 }
