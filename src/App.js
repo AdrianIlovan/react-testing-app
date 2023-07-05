@@ -2,6 +2,7 @@ import React, {useState,useEffect} from "react"
 import './App.css';
 import Axios from "axios";
 import PredictAge from "./PredictAge";
+import GenerateExcuse from "./GenerateExcuse";
 
 function App() {
 const [leftClick, setLeftClick] = useState([])
@@ -22,6 +23,9 @@ const fetchCatFact = () => {
       <p>{leftClick}</p>
       <div>
         <PredictAge />
+      </div>
+      <div>
+        <GenerateExcuse />
       </div>
     </div>
   );
